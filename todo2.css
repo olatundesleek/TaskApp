@@ -18,6 +18,7 @@ body {
   padding: 0 15px;
   margin: auto;
 }
+
 .title,
 .functions {
   flex: 1;
@@ -30,10 +31,11 @@ body {
   padding: 0 10px;
 }
 .todo-list {
-  min-height: 300px;
-  height: auto;
+  min-height: 400px;
+  height: 450px;
   opacity: 1;
   transition: 1s;
+  overflow-y: scroll;
 }
 .btn-container {
   display: flex;
@@ -92,9 +94,15 @@ label {
   background: #fe5147;
   height: auto;
   border-radius: 10px;
-  width: 90%;
+  width: 87%;
   padding: 15px;
   color: #fff;
   margin: 10px;
   position: relative;
+}
+
+@media screen and (max-width:500px ){
+.todo{width: 90%;}
+.listitem{width: 80%;}
+
 }

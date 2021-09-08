@@ -20,73 +20,102 @@ back.addEventListener("click",function () {
  
 })
 
-createtaskBtn.addEventListener("click",function () {
+
+function doCreateTask() {
     let title = document.querySelector(".titleinput");
- if (title.value === "") {
-     alert("Enter a Task title")
- }
- else {
-   let titleValue = title.value
-   let deadline = document.querySelector(".deadlineinput");
-   let startTime = document.querySelector(".starttimeinput");
-   let endTime = document.querySelector(".endtimeinput");
-  let startTimeValue = startTime.value;
- let  endTimeValue = endTime.value;
-let deadlineValue = deadline.value;
-console.log(deadlineValue);
-console.log(titleValue);
-console.log(endTimeValue);
-console.log(startTimeValue);
+    if (title.value === "") {
+        alert("Enter a Task title")
+    }
+    else {
+   let selColor = colors[Math.floor(Math.random() * colors.length)];
+   
+   
+   
+      let titleValue = title.value
+      let deadline = document.querySelector(".deadlineinput");
+      let startTime = document.querySelector(".starttimeinput");
+      let endTime = document.querySelector(".endtimeinput");
+     let startTimeValue = startTime.value;
+    let  endTimeValue = endTime.value;
+   let deadlineValue = deadline.value;
+   
+   
+   let listItem = document.createElement("div");
+   let startTimeText = document.createElement("p");
+   let deadLineText = document.createElement("p");
+   deadLineText.textContent = "Deadline " + deadlineValue;
+   deadLineText.style.textAlign = "right";
+   let delBtn = document.createElement("i");
+   delBtn.classList.add("far","fa-trash-alt");
+   delBtn.style.position = "absolute";
+   delBtn.style.right = "10px";
+   delBtn.style.cursor = "pointer";
+   startTimeText.textContent = "Start Time " + startTimeValue
+   let endTimeText = document.createElement("p");
+   endTimeText.textContent = "End Time " + endTimeValue;
+   
+   listItem.classList.add("listitem")
+   listItem.style.background = selColor;
+   
+   let todoTitle = document.createElement("h4")
+   
+   todoTitle.textContent = titleValue;
+   
+   listItem.appendChild(delBtn)
+   listItem.appendChild(startTimeText);
+   
+   listItem.appendChild(todoTitle)
+   
+   listItem.appendChild(endTimeText)
+   
+   listItem.appendChild(deadLineText)
+   
+   todoList.appendChild(listItem);
+   
+   todoList.scrollTop = 500;
+   
+   
+     title.value = "";    
+     deadline.value = "";
+     startTime.value = "";
+     endTime.value = ""
+   
+     taskEntryDiv.style.display = "none";
+     createtaskBtn.style.display = "none"; 
+     addtaskBtn.style.display = "block";
+     todoList.style.display = "block";
+   
+   
+     delBtn.addEventListener("click",function () {
+         listItem.remove();
+         
+     })
+   
+    }
+    
+     
+     
+}
 
-let listItem = document.createElement("div");
-let startTimeText = document.createElement("p");
-let deadLineText = document.createElement("p");
-deadLineText.textContent = "Deadline " + deadlineValue;
-deadLineText.style.textAlign = "right";
-let delBtn = document.createElement("i");
-delBtn.classList.add("far","fa-trash-alt");
-delBtn.style.position = "absolute";
-delBtn.style.right = "10px";
-delBtn.style.cursor = "pointer";
-startTimeText.textContent = "Start Time " + startTimeValue
-let endTimeText = document.createElement("p");
-endTimeText.textContent = "End Time " + endTimeValue;
-
-listItem.classList.add("listitem")
-
-let todoTitle = document.createElement("h4")
-
-todoTitle.textContent = titleValue;
-
-listItem.appendChild(delBtn)
-listItem.appendChild(startTimeText);
-
-listItem.appendChild(todoTitle)
-
-listItem.appendChild(endTimeText)
-
-listItem.appendChild(deadLineText)
-
-todoList.appendChild(listItem);
 
 
-  title.value = "";    
-  deadline.value = "";
-  startTime.value = "";
-  endTime.value = ""
 
-  taskEntryDiv.style.display = "none";
-  createtaskBtn.style.display = "none"; 
-  addtaskBtn.style.display = "block";
-  todoList.style.display = "block";
+// document.addEventListener('keyup', logKey);
 
-
-  delBtn.addEventListener("click",function () {
-      listItem.remove();
-  })
-
- }
+// function logKey(e) {
+//     console.log(e.code);
  
-  
-  
-})
+// }
+
+document.addEventListener('keyup', function (e) {
+    
+
+    if (e.code === "Enter") {
+        doCreateTask() 
+     }
+});
+
+
+
+
+createtaskBtn.addEventListener("click",doCreateTask)
