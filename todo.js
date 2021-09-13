@@ -45,7 +45,7 @@ function doCreateTask() {
     startTimeData.push(startTimeValue);
     let endTimeValue = endTime.value;
     // let deadlineValue = deadline.value;
-startTimeValue = "";
+
     let listItem = document.createElement("div");
     let startTimeText = document.createElement("p");
     // let deadLineText = document.createElement("p");
@@ -110,35 +110,35 @@ console.log(editedInput);
     });
 
     // editing a todo
-    listItem.addEventListener("click",function (event) {
-        let clickedTarget = event.target;
-        console.log(clickedTarget);
-        taskEntryDiv.style.display = "block";
-        createtaskBtn.style.display = "none";
-        addtaskBtn.style.display = "none";
-        todoList.style.display = "none";
-       editTaskBtn.style.display = "block"
-    title.value = "";
-        startTime.value = "02:3";
+//     listItem.addEventListener("click",function (event) {
+//         let clickedTarget = event.target;
+//         console.log(clickedTarget);
+//         taskEntryDiv.style.display = "block";
+//         createtaskBtn.style.display = "none";
+//         addtaskBtn.style.display = "none";
+//         todoList.style.display = "none";
+//        editTaskBtn.style.display = "block"
+//     title.value = "";
+//         startTime.value = "02:3";
    
 
-    editTaskBtn.addEventListener("click",function () {
-      let input2 = document.querySelector(".titleinput2");
-      let input2Value = input2.value;
-      taskEntryDiv.style.display = "none";
-        createtaskBtn.style.display = "none";
-        addtaskBtn.style.display = "block";
-        todoList.style.display = "block";
-        editTaskBtn.style.display = "none"
-        startTimeValue = "";
+//     editTaskBtn.addEventListener("click",function () {
+//       let input2 = document.querySelector(".titleinput2");
+//       let input2Value = input2.value;
+//       taskEntryDiv.style.display = "none";
+//         createtaskBtn.style.display = "none";
+//         addtaskBtn.style.display = "block";
+//         todoList.style.display = "block";
+//         editTaskBtn.style.display = "none"
+//         startTimeValue = "";
      
    
-   clickedTarget.textContent = input2Value;
-console.log(titleValue);
+//    clickedTarget.textContent = input2Value;
+// console.log(titleValue);
     
-    })
+//     })
         
-    })
+//     })
   }
 
  
