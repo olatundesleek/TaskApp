@@ -80,6 +80,10 @@ label {
   box-shadow: 2px 4px 3px black;
   font-size: 14px;
 }
+.todotitle{margin: 10px 0;}
+.fa-bell{position: relative;cursor: pointer;}
+.notifications{display: none;position: absolute;background: #ff0000;height: 15px;width: 15px;border-radius: 50%;top:5px;right: 2px;}
+.task-number{text-align: center;}
 .entry {
   padding-left: 25px;
   width: 80%;
@@ -90,6 +94,7 @@ label {
   background-color: rgb(248, 248, 248);
   margin: 25px 0;
 }
+.edittask{display: none;}
 .listitem {
   background: #fe5147;
   height: auto;
@@ -99,6 +104,7 @@ label {
   color: #fff;
   margin: 10px;
   position: relative;
+  cursor: pointer;
 }
 
 @media screen and (max-width:500px ){
