@@ -28,7 +28,7 @@ body {
   justify-content: end;
 }
 .icons {
-  padding: 0 10px;
+  padding: 0 10px;font-size: 20px;
 }
 .todo-list {
   min-height: 400px;
@@ -108,7 +108,16 @@ label {
 }
 
 @media screen and (max-width:500px ){
-.todo{width: 90%;}
+.todo{width: 90%;height: 98%;
+  margin: 10px;}
 .listitem{width: 80%;}
+.todo-container{
+	position: absolute;
+	height: 100%;
+  width: 97%;
+}
+.btn-container{position: absolute;
+  bottom: 10px;
+  width:90%}
 
 }
